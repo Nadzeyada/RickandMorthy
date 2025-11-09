@@ -1,10 +1,97 @@
 :root{
-    --color-red: #fb6470;
-    --color-dark: #353541;
-    --color-white: #fff;
-    --color-blue: #0093b5;
-    --font-size-text: 16px;
-    --font-size-title: 24px;
-    --font-size-heading: 32px;
-    --font-size-main-heading: 48px;
+  --color-red: #fb6470;
+  --color-dark: #353541;
+  --color-white: #fff;
+  --color-blue: #0093b5;
+  --font-size-text: 16px;
+  --font-size-title: 24px;
+  --font-size-heading: 32px;
+  --font-size-main-heading: 48px;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ========= HEADER START =========== */
+
+header {
+  position: relative;
+  min-height: 17vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(assets/img/desk.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 48%;
+  background-color: #18191C;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
+  z-index: 0;
+  pointer-events: none;
+}
+
+header > * {
+  position: relative;
+  z-index: 1;
+}
+
+.header__text-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+h1,
+.header__description {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  color: var(--color-white);
+}
+
+h1 {
+  margin: 0;
+  font-size: var(--font-size-main-heading);
+  text-transform: capitalize;
+}
+
+.header__description {
+  margin:0;
+  font-size: var(--font-size-text);
+}
+
+.burger-button {
+  position: absolute;
+  top: 25px;
+  left: 15px;
+  padding: 0;
+  border:0;
+  align-self: flex-start;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#burger-icon {
+  width: 25px;
+  stroke: var(--color-red);
+  fill: var(--color-red);
+  transition: stroke ease-in 0.4s, fill ease-in 0.4s;
+}
+
+.burger-button:hover>#burger-icon {
+  stroke: #f94554;
+  fill: #f94554;
+}
+
+/* ========= HEADER END =========== */
