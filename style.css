@@ -1,5 +1,6 @@
 :root{
   --color-red: #fb6470;
+  --color-red-hover: #f94554;
   --color-dark: #353541;
   --color-white: #fff;
   --color-blue: #0093b5;
@@ -74,8 +75,8 @@ h1 {
 }
 
 .burger-button:hover>#burger-icon {
-  stroke: #f94554;
-  fill: #f94554;
+  stroke: var(--color-red-hover);
+  fill: var(--color-red-hover);
 }
 
 @media (max-width: 1023px) {
@@ -106,3 +107,135 @@ h1 {
   }
 }
 /* ========= HEADER END =========== */
+
+/* ========= PRODUCTS SECTION START =========== */
+.portfolio-section {
+  padding: 20px 10%;
+  font-family: 'Raleway', sans-serif;
+}
+
+.portfolio-section__title {
+  margin: 0;
+  font-weight: 400;  
+  font-size: var(--font-size-heading);
+  color: var(--color-dark);
+}
+
+.portfolio-section__list {
+  margin: 0;
+  padding: 0 5px;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  background-color: var(--color-dark);
+}
+
+.portfolio-section__list-item {
+  display: inline-block;
+  padding: 10px 10px;
+  border-bottom: 3px solid transparent;
+  transition: border-bottom ease-in-out 0.5s;
+}
+
+.portfolio-section__list-item.active {
+  border-bottom: 3px solid var(--color-red);
+  pointer-events: none;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.portfolio-section__list-item .link {
+  color:var(--color-white);
+  transition: color ease-in-out 0.7s;
+}
+
+.portfolio-section__list-item:hover{
+  cursor: pointer;
+  border-bottom: 3px solid var(--color-red);
+}
+
+.portfolio-section__list-item:hover .link {
+  color:var(--color-red);
+}
+
+.portfolio-section__cards-container {
+  padding: 40px 0 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  row-gap: 30px;
+  column-gap: 10px;
+}
+
+.portfolio-section__card {
+  max-width: 30%;
+  min-height: 350px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 1px solid var(--color-red);
+}
+
+.card__content.image {
+  display: block;
+  width: 55%;
+  border-radius: 50%;
+}
+
+.card__content.paragraph,
+.card__content.author {
+  display: inline-block;
+  text-align: center;
+  color: var(--color-dark);
+}
+
+.card__title {
+  max-width: 75%;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: var(--font-size-text);
+  text-align: center;
+  color: var(--color-dark);
+}
+
+@media (max-width: 1023px) {
+  .portfolio-section {
+    padding: 20px 2%;
+  }
+
+  .portfolio-section__cards-container {
+    gap: 50px;
+    justify-content: space-evenly;
+  }
+
+  .portfolio-section__card {
+    max-width: 38%;
+    width:450px;
+  }
+}
+
+@media (max-width: 767px) {
+  .portfolio-section__card {
+    max-width: 60%;
+    min-height: 300px;
+  }
+  .portfolio-section__cards-container {
+    column-gap: 150px;
+    row-gap: 10px;
+  }
+}
+
+@media (max-width: 450px) {
+  .portfolio-section__card {
+    max-width: 80%;
+  }
+}
+/* ========= PRODUCTS SECTION END =========== */
