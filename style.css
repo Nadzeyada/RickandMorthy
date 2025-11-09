@@ -69,6 +69,7 @@ h1 {
 .header__description {
   margin:0;
   font-size: var(--font-size-text);
+  text-align: center;
 }
 
 .burger-button {
@@ -94,4 +95,31 @@ h1 {
   fill: #f94554;
 }
 
+@media (max-width: 1023px) {
+  header {
+    min-height: 25vw;
+  } 
+}
+
+@media (max-width: 920px) {
+  header {
+    min-height: 33.3vw;
+  }
+
+  h1 {
+    font-size: var(--font-size-title);
+  }  
+}
+
+@media (max-width: 767px) {
+  header {
+    min-height: 40vw;
+  }
+}
+
+@media (max-width: 490px) {
+  header {
+    min-height: 60vw;
+  }
+}
 /* ========= HEADER END =========== */
