@@ -2,6 +2,7 @@ let sourceCards = [];
 const navTitles = document.querySelectorAll('.navbar-link');
 const listItems = document.querySelectorAll('.portfolio-section__list-item');;
 const cardsContainer = document.querySelector('.portfolio-section__cards-container');
+const loader = document.querySelector('.loader');
 
 // link is depends on active navbar category (Clients, Products, Feedback)
 async function loadCards(link) {
@@ -11,10 +12,14 @@ async function loadCards(link) {
     console.log(sourceCards);
   } catch (error){
     console.error('Problem with fetching JSON', error);
+  } finally {
+    loader.classList.add('hidden');
   }
 }
 
 function generateCards(){
+  loader.classList.remove('hidden');
+
   let activeTitle = document.querySelector('.portfolio-section__list-item.active .navbar-link');
   let apiLink;
   let newCards = [];
@@ -23,6 +28,7 @@ function generateCards(){
   for(let i = 0; i < 6; ++i) {
     let card = document.createElement('article');
     card.classList.add('portfolio-section__card');
+    card.classList.add('hidden'); // so there wouldn't be empty cards before fetching and rendering
     newCards.push(card);
   }
   
@@ -51,6 +57,7 @@ function generateCards(){
           // Adding title&image to the new card
           newCards[i].append(cardImage);
           newCards[i].append(cardTitle);
+          newCards[i].classList.remove('hidden');
         }
       });
       break;
@@ -77,6 +84,7 @@ function generateCards(){
           // Adding title&image to the new card
           newCards[i].append(cardImage);
           newCards[i].append(cardTitle);
+          newCards[i].classList.remove('hidden');
         }
       });
       break;
@@ -109,13 +117,13 @@ function generateCards(){
           newCards[i].append(cardTitle);
           newCards[i].append(cardContentPar);
           newCards[i].append(cardContentAuthor);
+          newCards[i].classList.remove('hidden');
         }
       });
       break;
   }
   
   // Adding new cards elements to the HTML
-
   for(let i = 0; i < 6; ++i) {
     cardsContainer.append(newCards[i]);
   }
@@ -134,4 +142,6 @@ navTitles.forEach((title) => {
     console.log(event.target);
   })
 });
+
+generateCards();
 
