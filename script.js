@@ -1,5 +1,7 @@
 let sourceCards = [];
-let navTitles = document.querySelectorAll('.navbar-link');
+const navTitles = document.querySelectorAll('.navbar-link');
+const listItems = document.querySelectorAll('.portfolio-section__list-item');;
+const cardsContainer = document.querySelector('.portfolio-section__cards-container');
 
 // link is depends on active navbar category (Clients, Products, Feedback)
 async function loadCards(link) {
@@ -113,15 +115,23 @@ function generateCards(){
   }
   
   // Adding new cards elements to the HTML
-  let cardsContainer = document.querySelector('.portfolio-section__cards-container');
+
   for(let i = 0; i < 6; ++i) {
     cardsContainer.append(newCards[i]);
   }
-  
-  
-  console.log(cardsContainer);
-  ////// .............................
 }
 
-generateCards();
+// EVENT LISTENERS
+navTitles.forEach((title) => {
+  title.addEventListener('click', (event) => {
+    cardsContainer.innerHTML='';
+    
+    listItems.forEach(title => {
+      if(title.classList.contains('active')) title.classList.remove('active');
+    });
+    event.currentTarget.closest('.portfolio-section__list-item').classList.add('active');
+    generateCards();
+    console.log(event.target);
+  })
+});
 

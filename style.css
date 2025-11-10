@@ -135,7 +135,6 @@ h1 {
 
 .portfolio-section__list-item {
   display: inline-block;
-  padding: 10px 10px;
   border-bottom: 3px solid transparent;
   transition: border-bottom ease-in-out 0.5s;
 }
@@ -150,6 +149,8 @@ h1 {
 }
 
 .portfolio-section__list-item .link {
+  display: inline-block;
+  padding: 10px;
   color:var(--color-white);
   transition: color ease-in-out 0.7s;
 }
