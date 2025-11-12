@@ -4,6 +4,14 @@ const listItems = document.querySelectorAll('.portfolio-section__list-item');;
 const cardsContainer = document.querySelector('.portfolio-section__cards-container');
 const loader = document.querySelector('.loader');
 
+const popupError = document.querySelector('.portfolio-section__popup');
+const popupMessage = document.querySelector('.popup__message');
+const popupClose = document.querySelector('.popup__close-button');
+
+function showError(message) {
+  popupMessage.textContent = `Error fetching data: ${message}`;
+  popupError.classList.remove('hidden');
+}
 // link is depends on active navbar category (Clients, Products, Feedback)
 async function loadCards(link) {
   try {
@@ -12,8 +20,6 @@ async function loadCards(link) {
     console.log(sourceCards);
   } catch (error){
     console.error('Problem with fetching JSON', error);
-  } finally {
-    loader.classList.add('hidden');
   }
 }
 
@@ -59,7 +65,9 @@ function generateCards(){
           newCards[i].append(cardTitle);
           newCards[i].classList.remove('hidden');
         }
-      });
+      })
+      .catch(error => showError(error))
+      .finally(() => loader.classList.add('hidden')); 
       break;
     case 'Products':
       apiLink = 'https://fakestoreapi.com/products?limit=6';
@@ -86,7 +94,9 @@ function generateCards(){
           newCards[i].append(cardTitle);
           newCards[i].classList.remove('hidden');
         }
-      });
+      })
+      .catch(error => showError(error))
+      .finally(() => loader.classList.add('hidden')); 
       break;
     case 'Feedback':
       apiLink = 'https://fakerapi.it/api/v1/texts?_quantity=6&_characters=300';
@@ -119,7 +129,9 @@ function generateCards(){
           newCards[i].append(cardContentAuthor);
           newCards[i].classList.remove('hidden');
         }
-      });
+      })
+      .catch(error => showError(error))
+      .finally(() => loader.classList.add('hidden')); 
       break;
   }
   
@@ -130,8 +142,10 @@ function generateCards(){
 }
 
 // EVENT LISTENERS
+// === Switching categories ===
 navTitles.forEach((title) => {
   title.addEventListener('click', (event) => {
+    event.preventDefault(); // page wouldn't scroll jump to the top
     cardsContainer.innerHTML='';
     
     listItems.forEach(title => {
@@ -142,6 +156,9 @@ navTitles.forEach((title) => {
     console.log(event.target);
   })
 });
-
+// === Closing popupError ===
+popupClose.addEventListener('click', ()=>{
+  popupError.classList.add('hidden')
+})
 generateCards();
 

@@ -122,6 +122,8 @@ h1 {
 }
 
 .portfolio-section__list {
+  position: sticky;
+  top: 0;
   margin: 0;
   padding: 0 5px;
   height: 60px;
@@ -165,6 +167,7 @@ h1 {
 }
 
 .portfolio-section__cards-container {
+  min-height: 350px;
   padding: 40px 0 20px;
   display: flex;
   flex-direction: row;
@@ -175,7 +178,7 @@ h1 {
 }
 
 .portfolio-section__card {
-  max-width: 30%;
+  max-width: 26%;
   min-height: 350px;
   padding: 15px;
   display: flex;
@@ -262,5 +265,48 @@ h1 {
   .portfolio-section__card {
     max-width: 80%;
   }
+}
+
+.portfolio-section__popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  transition: opacity ease 0.2s;
+}
+
+.portfolio-section__popup.hidden {
+  display: none;
+  opacity: 0;
+}
+
+.portfolio-section__popup-window {
+  position: relative;
+  display: inline-block;
+  min-width: 100px;
+  padding: 10px 5px;
+  background-color: var(--color-white);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.popup__close-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  border: none;
+  background-color: transparent;
+  transition: color ease-in 0.3s;
+}
+
+.popup__close-button:hover {
+  color:#fb6470;
+  cursor: pointer;
 }
 /* ========= PRODUCTS SECTION END =========== */
