@@ -109,7 +109,8 @@ h1 {
 /* ========= HEADER END =========== */
 
 /* ========= PRODUCTS SECTION START =========== */
-.portfolio-section {
+.portfolio-section,
+.form {
   padding: 20px 10%;
   font-family: 'Raleway', sans-serif;
 }
@@ -267,7 +268,8 @@ h1 {
   }
 }
 
-.portfolio-section__popup {
+.portfolio-section__popup,
+.form__popup {
   position: fixed;
   top: 0;
   left: 0;
@@ -281,19 +283,21 @@ h1 {
   transition: opacity ease 0.2s;
 }
 
-.portfolio-section__popup.hidden {
+.portfolio-section__popup.hidden,
+.form__popup.hidden {
   display: none;
   opacity: 0;
 }
 
-.portfolio-section__popup-window {
+.portfolio-section__popup-window,
+.form__popup-window {
   position: relative;
   display: inline-block;
   min-width: 100px;
   padding: 10px 5px;
   background-color: var(--color-white);
   border-radius: 8px;
-  text-align: center;
+  text-align: left;
 }
 
 .popup__close-button {
@@ -310,3 +314,55 @@ h1 {
   cursor: pointer;
 }
 /* ========= PRODUCTS SECTION END =========== */
+
+/* ========= FORM STARTS ==================== */
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  background-color: #f1f3f7;
+}
+
+.form__title {
+  font-weight: 700;
+}
+
+.form__title,
+.form label  {
+  margin: 0;
+  font-size: var(--font-size-text);
+  color: var(--color-dark);
+}
+
+.form__title,
+.form label:nth-child(2),
+.form label:nth-child(5) {
+  text-transform: uppercase;
+}
+
+.form>input {
+  max-width: 700px;
+  width: 100%;
+  border: none;
+}
+
+.form__error {
+  font-size: 20px;
+  color: var(--color-red);
+}
+
+.subscribe-button {
+  padding: 10px 20px;
+  color: var(--color-white);
+  background-color: var(--color-red);
+  border: none;
+  box-shadow: inset -2px -2px 2px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: background-color ease-in 0.3s;
+}
+
+.subscribe-button:hover {
+  background-color: var(--color-red-hover);
+}
+

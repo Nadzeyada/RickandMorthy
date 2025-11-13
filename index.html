@@ -29,9 +29,9 @@
     <section class="portfolio-section">
       <h2 class="portfolio-section__title">Portfolio</h2>
       <ul class="portfolio-section__list">
-        <li class="portfolio-section__list-item "><a href="#" class="navbar-link link">Clients</a></li>
+        <li class="portfolio-section__list-item active"><a href="#" class="navbar-link link">Clients</a></li>
         <li class="portfolio-section__list-item "><a href="#" class="navbar-link link">Products</a></li>
-        <li class="portfolio-section__list-item active"><a href="#" class="navbar-link link">Feedback</a></li>
+        <li class="portfolio-section__list-item "><a href="#" class="navbar-link link">Feedback</a></li>
       </ul>
       <div class="loader"></div>
       <div class="portfolio-section__cards-container">
@@ -70,6 +70,31 @@
         </div>
       </div>
     </section>
+    <form class="form" novalidate>
+      <h2 class="form__title">I want to get fresh updates</h2>
+      <label for="username">first name:</label>
+      <input type="text" name="username" id="username" required>
+      <small class="form__error"></small>
+
+      <label for="email">email:</label>
+      <input type="email" name="email" id="email" required>
+      <small class="form__error"></small>
+
+      
+      <label for="consent">
+        <input type="checkbox" name="consent" id="consent" required>
+        I consent to the processing of personal data
+      </label>
+      <small class="form__error"></small>
+
+      <button type="submit" class="subscribe-button">Subscribe</button>
+    </form>
+    <div class="form__popup hidden">
+      <div class="form__popup-window">
+        <button type="button" class="popup__close-button">&#10006;</button>
+        <p class="popup__message"></p>
+      </div>
+    </div>
   </main>
   <footer></footer>
   <script src="script.js"></script>
