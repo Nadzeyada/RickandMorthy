@@ -426,3 +426,12 @@ h1 {
 }
 
 /* ========= SIDEBAR ENDS ==================== */
+
+.footer__title {
+  margin-left: 2em;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: var(--font-size-text);
+  text-align: left;
+  color: var(--color-dark);
+}
