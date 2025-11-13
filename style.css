@@ -65,6 +65,7 @@ h1 {
   align-self: flex-start;
   background-color: transparent;
   cursor: pointer;
+  z-index: 2;
 }
 
 #burger-icon {
@@ -366,3 +367,62 @@ h1 {
   background-color: var(--color-red-hover);
 }
 
+/* ========= FORM ENDS ==================== */
+
+/* ========= SIDEBAR STARTS ==================== */
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color: var(--color-dark);
+  z-index: 1;
+  opacity: 1;
+  transition: left 0.9s ease-out, opacity 0.9s ease-out;
+}
+
+.sidebar.hidden {
+  display: none;
+  left: 100vw;
+  opacity:0;
+}
+
+.sidebar__image {
+  display: block;
+  max-width: 300px;
+}
+
+.sidebar .portfolio-section__list {
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+}
+
+.sidebar .portfolio-section__list-item {
+  display: block;
+  width: 100%;
+  border-bottom: 2px solid #18191C;
+  transition: border-bottom ease-in-out 0.5s;
+}
+
+.sidebar .navbar-link {
+  padding: 30px 20px 0;
+}
+
+.burger-button.open path {
+  transition: transform 0.5s linear;
+}
+
+.burger-button.open path:nth-child(1) {
+  transform: translateX(30%) translateY(5%) rotate(45deg);
+}
+
+.burger-button.open path:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-button.open path:nth-child(3) {
+  transform: translateX(-42%) translateY(20%) rotate(-45deg);
+}
+
+/* ========= SIDEBAR ENDS ==================== */

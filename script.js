@@ -12,6 +12,11 @@ const popupClose = document.querySelector('.popup__close-button');
 
 const form = document.querySelector('.form');
 
+// Sidebar
+const burgerButton = document.querySelector('.burger-button');
+const sidebar = document.querySelector('.sidebar');
+const listItemLinks = document.querySelectorAll('.sidebar .navbar-link');
+
 function showError(message) {
   popupMessage.textContent = `Error fetching data: ${message}`;
   popupError.classList.remove('hidden');
@@ -164,7 +169,7 @@ navTitles.forEach((title) => {
 // === Closing popupError ===
 popupClose.addEventListener('click', ()=>{
   popupError.classList.add('hidden')
-})
+});
 
 // === Validating form & popup
 form.addEventListener('submit', (event) => {
@@ -199,12 +204,27 @@ form.addEventListener('submit', (event) => {
     document.querySelector('.form__popup').classList.remove('hidden');
     form.reset();
   }
-})
+});
 
 // === Closing form submission confirmation ===
 document.querySelector('.form__popup .popup__close-button').addEventListener('click', ()=>{
   document.querySelector('.form__popup').classList.add('hidden');
 })
+
+burgerButton.addEventListener('click', toggleSidebar);
+listItemLinks.forEach(link => {
+  link.addEventListener('click', toggleSidebar);
+});
+
+function toggleSidebar(){
+  burgerButton.classList.toggle('open');
+  sidebar.classList.toggle('hidden');
+  if(sidebar.classList.contains('hidden')){
+    document.body.style.overflow = '';
+  } else{
+    document.body.style.overflow = 'hidden';
+  }
+}
 
 generateCards();
 
