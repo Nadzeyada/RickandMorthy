@@ -81,34 +81,6 @@ h1 {
   stroke: var(--color-red-hover);
   fill: var(--color-red-hover);
 }
-
-@media (max-width: 1023px) {
-  header {
-    min-height: 25vw;
-  } 
-}
-
-@media (max-width: 920px) {
-  header {
-    min-height: 33.3vw;
-  }
-
-  h1 {
-    font-size: var(--font-size-title);
-  }  
-}
-
-@media (max-width: 767px) {
-  header {
-    min-height: 40vw;
-  }
-}
-
-@media (max-width: 490px) {
-  header {
-    min-height: 60vw;
-  }
-}
 /* ========= HEADER END =========== */
 
 /* ========= PRODUCTS SECTION START =========== */
@@ -236,39 +208,6 @@ h1 {
 
 .loader.hidden {
   display: none;
-}
-
-@media (max-width: 1023px) {
-  .portfolio-section {
-    padding: 20px 2%;
-  }
-
-  .portfolio-section__cards-container {
-    gap: 50px;
-    justify-content: space-evenly;
-  }
-
-  .portfolio-section__card {
-    max-width: 38%;
-    width:450px;
-  }
-}
-
-@media (max-width: 767px) {
-  .portfolio-section__card {
-    max-width: 60%;
-    min-height: 300px;
-  }
-  .portfolio-section__cards-container {
-    column-gap: 150px;
-    row-gap: 10px;
-  }
-}
-
-@media (max-width: 450px) {
-  .portfolio-section__card {
-    max-width: 80%;
-  }
 }
 
 .portfolio-section__popup,
@@ -411,7 +350,7 @@ h1 {
   padding: 30px 20px 0;
 }
 /* ========= SIDEBAR ENDS ==================== */
-
+/* ========= FOOTER STARTS ==================== */
 .footer__title {
   margin-left: 2em;
   font-family: 'Raleway', sans-serif;
@@ -419,4 +358,68 @@ h1 {
   font-size: var(--font-size-text);
   text-align: left;
   color: var(--color-dark);
+}
+/* ========= FOOTER ENDS ==================== */
+
+/* ========= MEDIA QUERIES START ==================== */
+@media (max-width: 1023px) {
+  header {
+    min-height: 25vw;
+  } 
+}
+
+@media (max-width: 920px) {
+  header {
+    min-height: 33.3vw;
+  }
+
+  h1 {
+    font-size: var(--font-size-title);
+  }  
+}
+
+@media (max-width: 767px) {
+  header {
+    min-height: 40vw;
+  }
+}
+
+@media (max-width: 490px) {
+  header {
+    min-height: 60vw;
+  }
+}
+
+
+@media (max-width: 1023px) {
+  .portfolio-section {
+    padding: 20px 2%;
+  }
+
+  .portfolio-section__cards-container {
+    gap: 50px;
+    justify-content: space-evenly;
+  }
+
+  .portfolio-section__card {
+    max-width: 38%;
+    width:450px;
+  }
+}
+
+@media (max-width: 767px) {
+  .portfolio-section__card {
+    max-width: 60%;
+    min-height: 300px;
+  }
+  .portfolio-section__cards-container {
+    column-gap: 150px;
+    row-gap: 10px;
+  }
+}
+
+@media (max-width: 450px) {
+  .portfolio-section__card {
+    max-width: 80%;
+  }
 }
