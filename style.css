@@ -2,6 +2,7 @@
   --color-red: #fb6470;
   --color-red-hover: #f94554;
   --color-dark: #353541;
+  --color-dark-border: #18191C;
   --color-white: #fff;
   --color-blue: #0093b5;
   --font-size-text: 16px;
@@ -27,7 +28,7 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
-  background-color: #18191C;
+  background-color: var(--color-dark-border);
 }
 
 .header__text-content {
@@ -39,19 +40,18 @@ header {
 
 h1,
 .header__description {
+  margin:0;
   font-family: "Raleway", sans-serif;
   font-weight: 400;
   color: var(--color-white);
 }
 
 h1 {
-  margin: 0;
   font-size: var(--font-size-main-heading);
   text-transform: capitalize;
 }
 
 .header__description {
-  margin:0;
   font-size: var(--font-size-text);
   text-align: center;
 }
@@ -401,7 +401,7 @@ h1 {
 .sidebar .portfolio-section__list-item {
   display: block;
   width: 100%;
-  border-bottom: 2px solid #18191C;
+  border-bottom: 2px solid var(--color-dark-border);
   transition: border-bottom ease-in-out 0.5s;
 }
 
