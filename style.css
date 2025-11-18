@@ -410,23 +410,6 @@ h1 {
 .sidebar .navbar-link {
   padding: 30px 20px 0;
 }
-
-.burger-button.open path {
-  transition: transform 0.5s linear;
-}
-
-.burger-button.open path:nth-child(1) {
-  transform: translateX(30%) translateY(5%) rotate(45deg);
-}
-
-.burger-button.open path:nth-child(2) {
-  opacity: 0;
-}
-
-.burger-button.open path:nth-child(3) {
-  transform: translateX(-42%) translateY(20%) rotate(-45deg);
-}
-
 /* ========= SIDEBAR ENDS ==================== */
 
 .footer__title {
