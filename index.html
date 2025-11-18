@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RickandMorthyStore</title>
-  <link rel="stylesheet" href="normalize.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap">
 </head>
@@ -12,13 +11,8 @@
   <header>
       <button type="button" class="burger-button">
           <svg viewBox="0 0 488 488" id="burger-icon">
-              <path d="M64.192,108.444h359.617c29.943,0,54.223-24.278,54.223-54.222C478.031,24.278,453.754,0,423.809,0H64.192
-                  C34.248,0,9.969,24.278,9.969,54.222C9.969,84.166,34.248,108.444,64.192,108.444z"/>
-              <path d="M423.809,189.778H64.192c-29.944,0-54.223,24.278-54.223,54.222c0,29.943,24.278,54.223,54.223,54.223h359.617
-                  c29.945,0,54.223-24.279,54.223-54.223C478.031,214.056,453.754,189.778,423.809,189.778z"/>
-              <path d="M423.809,379.557H64.192c-29.944,0-54.223,24.277-54.223,54.222C9.969,463.722,34.248,488,64.192,488h359.617
-                  c29.945,0,54.223-24.278,54.223-54.222C478.031,403.834,453.754,379.557,423.809,379.557z"/>
-              </svg>
+            <use xlink:href="/assets/img/sprite.svg#burger-menu"></use>
+          </svg>
       </button>
       <div class="header__text-content">
         <h1>Let make something great</h1>
@@ -44,13 +38,6 @@
       </aside>
       <div class="loader"></div>
       <div class="portfolio-section__cards-container">
-        <!--
-        <article class="portfolio-section__card">
-            <h3 class="card__title">Ginger Bread</h3>
-            <p class="card__content paragraph">For instance, if you please! \"William the Conqueror, whose cause was favoured by the little golden key and hurried upstairs, in great fear lest she should meet the real Mary Ann, what ARE you doing out here? Run home this moment, and fetch me a pair of white kid gloves while she remembered how.</p>
-            <p class="card__content author">Misha Fellow</p>
-        </article>
-        -->
       </div>
       <div class="portfolio-section__popup hidden">
         <div class="portfolio-section__popup-window">
@@ -88,6 +75,6 @@
   <footer>
     <h3 class="footer__title">All rights reserved 2023</h3>
   </footer>
-  <script src="script.js"></script>
+  <script type="module" src="script.js"></script>
 </body>
 </html>

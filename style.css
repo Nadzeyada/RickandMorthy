@@ -1,7 +1,10 @@
+@import url(normalize.css);
+
 :root{
   --color-red: #fb6470;
   --color-red-hover: #f94554;
   --color-dark: #353541;
+  --color-dark-border: #18191C;
   --color-white: #fff;
   --color-blue: #0093b5;
   --font-size-text: 16px;
@@ -27,7 +30,7 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
-  background-color: #18191C;
+  background-color: var(--color-dark-border);
 }
 
 .header__text-content {
@@ -39,19 +42,18 @@ header {
 
 h1,
 .header__description {
+  margin:0;
   font-family: "Raleway", sans-serif;
   font-weight: 400;
   color: var(--color-white);
 }
 
 h1 {
-  margin: 0;
   font-size: var(--font-size-main-heading);
   text-transform: capitalize;
 }
 
 .header__description {
-  margin:0;
   font-size: var(--font-size-text);
   text-align: center;
 }
@@ -78,34 +80,6 @@ h1 {
 .burger-button:hover>#burger-icon {
   stroke: var(--color-red-hover);
   fill: var(--color-red-hover);
-}
-
-@media (max-width: 1023px) {
-  header {
-    min-height: 25vw;
-  } 
-}
-
-@media (max-width: 920px) {
-  header {
-    min-height: 33.3vw;
-  }
-
-  h1 {
-    font-size: var(--font-size-title);
-  }  
-}
-
-@media (max-width: 767px) {
-  header {
-    min-height: 40vw;
-  }
-}
-
-@media (max-width: 490px) {
-  header {
-    min-height: 60vw;
-  }
 }
 /* ========= HEADER END =========== */
 
@@ -234,39 +208,6 @@ h1 {
 
 .loader.hidden {
   display: none;
-}
-
-@media (max-width: 1023px) {
-  .portfolio-section {
-    padding: 20px 2%;
-  }
-
-  .portfolio-section__cards-container {
-    gap: 50px;
-    justify-content: space-evenly;
-  }
-
-  .portfolio-section__card {
-    max-width: 38%;
-    width:450px;
-  }
-}
-
-@media (max-width: 767px) {
-  .portfolio-section__card {
-    max-width: 60%;
-    min-height: 300px;
-  }
-  .portfolio-section__cards-container {
-    column-gap: 150px;
-    row-gap: 10px;
-  }
-}
-
-@media (max-width: 450px) {
-  .portfolio-section__card {
-    max-width: 80%;
-  }
 }
 
 .portfolio-section__popup,
@@ -401,32 +342,15 @@ h1 {
 .sidebar .portfolio-section__list-item {
   display: block;
   width: 100%;
-  border-bottom: 2px solid #18191C;
+  border-bottom: 2px solid var(--color-dark-border);
   transition: border-bottom ease-in-out 0.5s;
 }
 
 .sidebar .navbar-link {
   padding: 30px 20px 0;
 }
-
-.burger-button.open path {
-  transition: transform 0.5s linear;
-}
-
-.burger-button.open path:nth-child(1) {
-  transform: translateX(30%) translateY(5%) rotate(45deg);
-}
-
-.burger-button.open path:nth-child(2) {
-  opacity: 0;
-}
-
-.burger-button.open path:nth-child(3) {
-  transform: translateX(-42%) translateY(20%) rotate(-45deg);
-}
-
 /* ========= SIDEBAR ENDS ==================== */
-
+/* ========= FOOTER STARTS ==================== */
 .footer__title {
   margin-left: 2em;
   font-family: 'Raleway', sans-serif;
@@ -434,4 +358,68 @@ h1 {
   font-size: var(--font-size-text);
   text-align: left;
   color: var(--color-dark);
+}
+/* ========= FOOTER ENDS ==================== */
+
+/* ========= MEDIA QUERIES START ==================== */
+@media (max-width: 1023px) {
+  header {
+    min-height: 25vw;
+  } 
+}
+
+@media (max-width: 920px) {
+  header {
+    min-height: 33.3vw;
+  }
+
+  h1 {
+    font-size: var(--font-size-title);
+  }  
+}
+
+@media (max-width: 767px) {
+  header {
+    min-height: 40vw;
+  }
+}
+
+@media (max-width: 490px) {
+  header {
+    min-height: 60vw;
+  }
+}
+
+
+@media (max-width: 1023px) {
+  .portfolio-section {
+    padding: 20px 2%;
+  }
+
+  .portfolio-section__cards-container {
+    gap: 50px;
+    justify-content: space-evenly;
+  }
+
+  .portfolio-section__card {
+    max-width: 38%;
+    width:450px;
+  }
+}
+
+@media (max-width: 767px) {
+  .portfolio-section__card {
+    max-width: 60%;
+    min-height: 300px;
+  }
+  .portfolio-section__cards-container {
+    column-gap: 150px;
+    row-gap: 10px;
+  }
+}
+
+@media (max-width: 450px) {
+  .portfolio-section__card {
+    max-width: 80%;
+  }
 }
